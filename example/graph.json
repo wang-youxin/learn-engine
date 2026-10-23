@@ -1,0 +1,82 @@
+{
+  "topic": "demo-ai-pm",
+  "note": "示例图谱：AI 产品经理方向，5 个知识点。用于演示 graph.py 的校验/排序/分层功能，不含真实个人数据。",
+  "axes": ["A1", "A2", "A3", "A6"],
+  "kps": [
+    {
+      "id": "KP1",
+      "name": "AI 介入深度三分类（加 AI / AI 加 / AI 原生）",
+      "axis": "A1",
+      "target_bloom": 4,
+      "deps": [],
+      "related": ["KP2"],
+      "contrast": ["KP2"],
+      "value": 0.9,
+      "freq": 0.9,
+      "source": ["https://example.com/docs/ai-native-classification"],
+      "conflict": false,
+      "status": "untested",
+      "bloom_now": 4
+    },
+    {
+      "id": "KP2",
+      "name": "传统产品 vs AI 产品核心差异（价值来源 / 迭代方式 / 护城河）",
+      "axis": "A1",
+      "target_bloom": 4,
+      "deps": [],
+      "related": ["KP1"],
+      "contrast": ["KP1"],
+      "value": 0.6,
+      "freq": 0.7,
+      "source": ["https://example.com/blog/traditional-vs-ai-product"],
+      "conflict": false,
+      "status": "untested",
+      "bloom_now": 3
+    },
+    {
+      "id": "KP3",
+      "name": "效果评估三集（基线集 / 回归集 / 边界集）+ 体验类指标",
+      "axis": "A6",
+      "target_bloom": 5,
+      "deps": ["KP1"],
+      "related": ["KP4"],
+      "contrast": [],
+      "value": 0.95,
+      "freq": 0.8,
+      "source": ["https://example.com/docs/eval-set-design"],
+      "conflict": false,
+      "status": "untested",
+      "bloom_now": 1
+    },
+    {
+      "id": "KP4",
+      "name": "数据闭环与数据飞轮",
+      "axis": "A6",
+      "target_bloom": 4,
+      "deps": ["KP3"],
+      "related": ["KP3"],
+      "contrast": [],
+      "value": 0.7,
+      "freq": 0.5,
+      "source": ["https://example.com/blog/data-flywheel"],
+      "conflict": false,
+      "status": "untested",
+      "bloom_now": 0
+    },
+    {
+      "id": "KP5",
+      "name": "场景假设与技术 POC（能不能做 / 效果达不达标 / 成本可控）",
+      "axis": "A2",
+      "target_bloom": 4,
+      "deps": [],
+      "related": ["KP1"],
+      "contrast": [],
+      "value": 0.8,
+      "freq": 0.6,
+      "source": ["https://example.com/docs/scenario-assumption-poc"],
+      "conflict": false,
+      "status": "untested",
+      "bloom_now": 2
+    }
+  ]
+}
